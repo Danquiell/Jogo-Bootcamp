@@ -1,0 +1,4 @@
+"/home/daniel/Área de trabalho/Jogo-Bootcamp"
+
+"/home/daniel/Área de trabalho/vault-breakers/tools/Godot_v4.6.2-stable_linux.x86_64" -e --path "/home/daniel/Área de trabalho/Jogo-Bootcamp"
+

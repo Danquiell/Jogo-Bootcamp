@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bgrenade00001"]
+
+[ext_resource type="Script" uid="uid://ooom4j4jjfcm" path="res://scripts/items/grenade.gd" id="1_grnd"]
+
+[node name="Grenade" type="Node2D" unique_id=1925388129]
+script = ExtResource("1_grnd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1736592071]

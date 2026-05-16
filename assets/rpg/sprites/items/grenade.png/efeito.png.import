@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pyx3ujvi2e75"
-path="res://.godot/imported/vilao.png-4aa539a02342c9fbe6d1d875ad4d4d58.ctex"
+uid="uid://bwl3y0d5imot6"
+path="res://.godot/imported/efeito.png-332ed7668b6047a3b6e899c887418ab3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/vilao.png"
-dest_files=["res://.godot/imported/vilao.png-4aa539a02342c9fbe6d1d875ad4d4d58.ctex"]
+source_file="res://assets/rpg/sprites/items/grenade.png/efeito.png"
+dest_files=["res://.godot/imported/efeito.png-332ed7668b6047a3b6e899c887418ab3.ctex"]
 
 [params]
 

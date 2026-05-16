@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pyx3ujvi2e75"
-path="res://.godot/imported/vilao.png-4aa539a02342c9fbe6d1d875ad4d4d58.ctex"
+uid="uid://dnxeppi0su3ou"
+path="res://.godot/imported/granada1.png-36a351c2eb51696cfb76c8531eeef461.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/vilao.png"
-dest_files=["res://.godot/imported/vilao.png-4aa539a02342c9fbe6d1d875ad4d4d58.ctex"]
+source_file="res://assets/rpg/sprites/items/grenade.png/granada1.png"
+dest_files=["res://.godot/imported/granada1.png-36a351c2eb51696cfb76c8531eeef461.ctex"]
 
 [params]
 

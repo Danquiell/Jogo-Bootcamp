@@ -91,6 +91,7 @@ var _target_player: CharacterBody2D = null
 
 func _ready() -> void:
 	current_hp = max_hp
+	add_to_group("enemies")
 
 	# Load textures for variant
 	_load_variant_textures()

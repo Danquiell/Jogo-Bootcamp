@@ -52,6 +52,14 @@ const PIVOT_ROTATIONS: Dictionary = {
 	Direction.UP: -PI / 2.0,
 }
 
+## Facing direction as unit Vector2 (used for grenade throw)
+const FACING_VECTORS: Dictionary = {
+	Direction.DOWN: Vector2.DOWN,
+	Direction.LEFT: Vector2.LEFT,
+	Direction.RIGHT: Vector2.RIGHT,
+	Direction.UP: Vector2.UP,
+}
+
 # --- Export Variables ---
 @export_group("Movement")
 @export var speed: float = 80.0
@@ -62,6 +70,9 @@ const PIVOT_ROTATIONS: Dictionary = {
 @export var attack_cooldown: float = 0.4
 @export var invincibility_duration: float = 1.0
 @export var stun_duration: float = 0.3
+
+@export_group("Grenade")
+@export var grenade_cooldown: float = 1.0
 
 # --- Node References ---
 @onready var sprite: Sprite2D = $Sprite
@@ -82,6 +93,9 @@ var attack_timer: float = 0.0
 var attack_cooldown_timer: float = 0.0
 var invincibility_timer: float = 0.0
 var stun_timer: float = 0.0
+var _grenade_cooldown_timer: float = 0.0
+
+var _grenade_scene: PackedScene = preload("res://scenes/items/grenade.tscn")
 
 ## Cached textures (loaded once)
 var _textures: Dictionary = {}
@@ -125,6 +139,11 @@ func _physics_process(delta: float) -> void:
 
 	# Update timers
 	_update_timers(delta)
+
+	# Grenade throw — works from any state except hurt/death
+	if current_state != State.HURT and current_state != State.DEATH:
+		if Input.is_action_just_pressed("throw_item") and _grenade_cooldown_timer <= 0.0:
+			_throw_grenade()
 
 	# State machine
 	match current_state:
@@ -390,6 +409,18 @@ func _update_timers(delta: float) -> void:
 		sprite.visible = true
 	if stun_timer > 0.0:
 		stun_timer -= delta
+	if _grenade_cooldown_timer > 0.0:
+		_grenade_cooldown_timer -= delta
+
+
+# --- Grenade ---
+
+func _throw_grenade() -> void:
+	_grenade_cooldown_timer = grenade_cooldown
+	var grenade: Grenade = _grenade_scene.instantiate() as Grenade
+	grenade.direction = FACING_VECTORS.get(facing, Vector2.DOWN)
+	grenade.global_position = global_position
+	get_parent().add_child(grenade)
 
 
 # --- Signal Callbacks ---

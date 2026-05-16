@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgjw1pox4ak3"
-path="res://.godot/imported/WhatsApp Image 2026-05-09 at 16.16.03 (1).jpeg-b80c1e732a0469a40cf92bb4793c8179.ctex"
+path="res://.godot/imported/WhatsApp Image 2026-05-09 at 16.16.03 (1).jpeg-ad1702b2f353dde7fad5feb62c8c41a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITES-GEMINI/WhatsApp Image 2026-05-09 at 16.16.03 (1).jpeg"
-dest_files=["res://.godot/imported/WhatsApp Image 2026-05-09 at 16.16.03 (1).jpeg-b80c1e732a0469a40cf92bb4793c8179.ctex"]
+source_file="res://assets/generated/SPRITES-GEMINI/WhatsApp Image 2026-05-09 at 16.16.03 (1).jpeg"
+dest_files=["res://.godot/imported/WhatsApp Image 2026-05-09 at 16.16.03 (1).jpeg-ad1702b2f353dde7fad5feb62c8c41a9.ctex"]
 
 [params]
 

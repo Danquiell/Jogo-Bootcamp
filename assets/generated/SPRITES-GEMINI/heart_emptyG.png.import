@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fb771aavlrkc"
-path="res://.godot/imported/heart_emptyG.png-7ce051d50f01cb6b7393ceb6fb21e467.ctex"
+path="res://.godot/imported/heart_emptyG.png-fcbe37e1ebfb02eea431478bde67974a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITES-GEMINI/heart_emptyG.png"
-dest_files=["res://.godot/imported/heart_emptyG.png-7ce051d50f01cb6b7393ceb6fb21e467.ctex"]
+source_file="res://assets/generated/SPRITES-GEMINI/heart_emptyG.png"
+dest_files=["res://.godot/imported/heart_emptyG.png-fcbe37e1ebfb02eea431478bde67974a.ctex"]
 
 [params]
 
