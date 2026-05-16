@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3krralhtwfto"
-path="res://.godot/imported/GPT-attack.png-cfb832a80cb14dd41ec8ccd57305ae4f.ctex"
+uid="uid://4iy82dcvtu5d"
+path="res://.godot/imported/GPT Pro-iso_custom_heat_attack_up.png-8e293d8cf75117ba096a302278764689.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/sprites/gptSkin/GPT-attack.png"
-dest_files=["res://.godot/imported/GPT-attack.png-cfb832a80cb14dd41ec8ccd57305ae4f.ctex"]
+source_file="res://assets/generated/sprites/gptPhase2/GPT Pro-iso_custom_heat_attack_up.png"
+dest_files=["res://.godot/imported/GPT Pro-iso_custom_heat_attack_up.png-8e293d8cf75117ba096a302278764689.ctex"]
 
 [params]
 

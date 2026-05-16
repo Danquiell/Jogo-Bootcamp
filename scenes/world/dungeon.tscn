@@ -52,12 +52,16 @@ collision_mask = 0
 [node name="BottomShape" type="CollisionShape2D" parent="BottomWall"]
 shape = SubResource("RectangleShape2D_wide")
 
-[node name="RightWall" type="StaticBody2D" parent="."]
+[node name="ExitRight" type="Area2D" parent="."]
 position = Vector2(484, 180)
-collision_layer = 1
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_transition")
+target_room_path = "res://scenes/world/final_level.tscn"
+target_spawn = Vector2(30, 180)
+direction = "right"
 
-[node name="RightShape" type="CollisionShape2D" parent="RightWall"]
+[node name="ExitRightShape" type="CollisionShape2D" parent="ExitRight"]
 shape = SubResource("RectangleShape2D_tall")
 
 [node name="ExitLeft" type="Area2D" parent="."]
