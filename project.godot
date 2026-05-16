@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Ashes of The Forge"
-run/main_scene="res://scenes/world/vila.tscn"
+config/name="Steams of The Machine"
+run/main_scene="res://scenes/ui/character_select.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

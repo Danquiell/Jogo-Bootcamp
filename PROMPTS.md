@@ -101,6 +101,4 @@ Soft dithered shadows. Centered subject on uniform white background.
 No text, no UI, no borders, no watermarks.
 === END STYLE ===
  
-ASSET TO GENERATE: [Create a female character in a steampunk theme who wears a red dress that reaches mid-thigh, short sleeves with black fabric on the shoulders, slightly dark green hair, boots with laces, black open-fingered gloves, and a large hat with mechanical goggles on the front, referencing the classic steampunk style.
-
-]
+ASSET TO GENERATE: [Create a female character in a steampunk theme who wears a red dress that reaches mid-thigh, short sleeves with black fabric on the shoulders, slightly dark green hair, boots with laces, black open-fingered gloves, and a large hat with mechanical goggles on the front, referencing the classic steampunk style.]

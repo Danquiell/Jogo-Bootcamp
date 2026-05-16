@@ -2,6 +2,12 @@ extends Node
 ## GameManager autoload — global game state for Ashes of the Forge.
 ## Tracks player health, resources, level, and handles respawn logic.
 
+# --- Enums ---
+enum CharacterSkin { SWORDSMAN, GEMINI }
+
+# --- Skin ---
+var selected_skin: CharacterSkin = CharacterSkin.SWORDSMAN
+
 # --- Signals ---
 signal health_changed(current_hp: int, max_hp: int)
 signal resources_changed(slime_cores: int, bone_shards: int)

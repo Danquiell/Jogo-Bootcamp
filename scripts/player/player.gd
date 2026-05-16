@@ -100,15 +100,35 @@ var _grenade_scene: PackedScene = preload("res://scenes/items/grenade.tscn")
 ## Cached textures (loaded once)
 var _textures: Dictionary = {}
 
+## Gemini skin — one texture per direction
+const GEMINI_TEXTURE_PATHS: Dictionary = {
+	Direction.DOWN: "res://assets/generated/SPRITES-GEMINI/rotations/south.png",
+	Direction.LEFT: "res://assets/generated/SPRITES-GEMINI/rotations/west.png",
+	Direction.RIGHT: "res://assets/generated/SPRITES-GEMINI/rotations/east.png",
+	Direction.UP: "res://assets/generated/SPRITES-GEMINI/rotations/north.png",
+}
+var _gemini_textures: Dictionary = {}
+var _use_gemini_skin: bool = false
+
 ## Track if player is dead
 var _is_dead: bool = false
 
 # --- Lifecycle ---
 
 func _ready() -> void:
-	# Pre-load all textures
-	for state: int in TEXTURE_PATHS:
-		_textures[state] = load(TEXTURE_PATHS[state])
+	_use_gemini_skin = GameManager.selected_skin == GameManager.CharacterSkin.GEMINI
+
+	if _use_gemini_skin:
+		for dir: int in GEMINI_TEXTURE_PATHS:
+			_gemini_textures[dir] = load(GEMINI_TEXTURE_PATHS[dir])
+		sprite.hframes = 1
+		sprite.vframes = 1
+		sprite.frame = 0
+		sprite.texture = _gemini_textures.get(facing)
+	else:
+		# Pre-load all textures
+		for state: int in TEXTURE_PATHS:
+			_textures[state] = load(TEXTURE_PATHS[state])
 
 	# Set initial texture
 	_set_animation_state(State.IDLE)
@@ -315,6 +335,13 @@ func _flash_damage() -> void:
 # --- Animation ---
 
 func _set_animation_state(new_state: State) -> void:
+	if _use_gemini_skin:
+		current_state = new_state
+		anim_timer = 0.0
+		current_anim_frame = 0
+		sprite.texture = _gemini_textures.get(facing)
+		return
+
 	if current_state == new_state and sprite.texture == _textures.get(new_state):
 		return
 
@@ -357,6 +384,9 @@ func _animate(delta: float) -> void:
 
 
 func _update_sprite_frame() -> void:
+	if _use_gemini_skin:
+		sprite.texture = _gemini_textures.get(facing)
+		return
 	var frame_count: int = _get_frame_count_for_current()
 	var row: int = facing as int
 	sprite.frame = (row * sprite.hframes) + clampi(current_anim_frame, 0, frame_count - 1)
