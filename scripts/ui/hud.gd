@@ -11,12 +11,22 @@ var heart_full_tex: Texture2D
 var heart_half_tex: Texture2D
 var heart_empty_tex: Texture2D
 
+# Visible region inside the 40x40 texture (transparent padding removed)
+const HEART_REGION: Rect2 = Rect2(11, 12, 18, 16)
+
+
+func _make_heart_atlas(base: Texture2D) -> AtlasTexture:
+	var atlas := AtlasTexture.new()
+	atlas.atlas = base
+	atlas.region = HEART_REGION
+	return atlas
+
 
 func _ready() -> void:
-	# Load heart textures
-	heart_full_tex = preload("res://assets/ui/heart_full.png")
-	heart_half_tex = preload("res://assets/ui/heart_half.png")
-	heart_empty_tex = preload("res://assets/ui/heart_empty.png")
+	# Load heart textures cropped to visible region
+	heart_full_tex  = _make_heart_atlas(preload("res://assets/ui/heart_full.png"))
+	heart_half_tex  = _make_heart_atlas(preload("res://assets/ui/heart_half.png"))
+	heart_empty_tex = _make_heart_atlas(preload("res://assets/ui/heart_empty.png"))
 
 	# Connect to GameManager signals
 	GameManager.health_changed.connect(_on_health_changed)
@@ -41,8 +51,10 @@ func _update_hearts(current_hp: int, max_hp: int) -> void:
 	for i in range(full_hearts):
 		var heart := TextureRect.new()
 		heart.stretch_mode = TextureRect.STRETCH_KEEP
-		heart.custom_minimum_size = Vector2(16, 16)
+		heart.custom_minimum_size = Vector2(18, 16)
 		heart.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		heart.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+		heart.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 
 		var half_hearts_for_this: int = current_half - (i * 2)
 		if half_hearts_for_this >= 2:

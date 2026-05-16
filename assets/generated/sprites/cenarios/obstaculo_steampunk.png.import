@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjqvo3v4psbx2"
-path="res://.godot/imported/Generated Image May 09, 2026 - 3_41PM.png-d6059d2ff0bc37428d5e40bf65d0c159.ctex"
+uid="uid://d0flp6xqcebgq"
+path="res://.godot/imported/obstaculo_steampunk.png-0b8c91cd2fda4db6a53a823c0c138e64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/Generated Image May 09, 2026 - 3_41PM.png"
-dest_files=["res://.godot/imported/Generated Image May 09, 2026 - 3_41PM.png-d6059d2ff0bc37428d5e40bf65d0c159.ctex"]
+source_file="res://assets/generated/sprites/cenarios/obstaculo_steampunk.png"
+dest_files=["res://.godot/imported/obstaculo_steampunk.png-0b8c91cd2fda4db6a53a823c0c138e64.ctex"]
 
 [params]
 

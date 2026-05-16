@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xicqwt64tfur"
-path="res://.godot/imported/heart_fullG.png-4af69ada62ea86edfcf196a02d3b1b8e.ctex"
+uid="uid://dlx6n3e6m70hx"
+path="res://.godot/imported/cenario_quadrado_steampunk.png-c6a8d215680d5c1c691cfe9b5c2ae43e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/heart_fullG.png"
-dest_files=["res://.godot/imported/heart_fullG.png-4af69ada62ea86edfcf196a02d3b1b8e.ctex"]
+source_file="res://assets/generated/sprites/cenarios/cenario_quadrado_steampunk.png"
+dest_files=["res://.godot/imported/cenario_quadrado_steampunk.png-c6a8d215680d5c1c691cfe9b5c2ae43e.ctex"]
 
 [params]
 

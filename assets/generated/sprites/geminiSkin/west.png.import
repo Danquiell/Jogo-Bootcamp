@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pyx3ujvi2e75"
-path="res://.godot/imported/vilao.png-4aa539a02342c9fbe6d1d875ad4d4d58.ctex"
+uid="uid://bt3gteflwo2cs"
+path="res://.godot/imported/west.png-3e56db804a74f2104be85f0932e73ddd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/vilao.png"
-dest_files=["res://.godot/imported/vilao.png-4aa539a02342c9fbe6d1d875ad4d4d58.ctex"]
+source_file="res://assets/generated/sprites/geminiSkin/west.png"
+dest_files=["res://.godot/imported/west.png-3e56db804a74f2104be85f0932e73ddd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfnhirsi4ycax"
-path="res://.godot/imported/heart_halfG.png-d05516709e91f5fc61109cdc78bc6b73.ctex"
+uid="uid://bbm7dv48fjisj"
+path="res://.godot/imported/Gemini-attack.png-0474fc61cb05eeb7a4db9fb9bf9a162d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/heart_halfG.png"
-dest_files=["res://.godot/imported/heart_halfG.png-d05516709e91f5fc61109cdc78bc6b73.ctex"]
+source_file="res://assets/generated/sprites/geminiSkin/Gemini-attack.png"
+dest_files=["res://.godot/imported/Gemini-attack.png-0474fc61cb05eeb7a4db9fb9bf9a162d.ctex"]
 
 [params]
 

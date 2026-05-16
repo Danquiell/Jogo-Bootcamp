@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpskr0056e074"
-path="res://.godot/imported/east.png-dd070531db59c7db2f9296ed3d88f552.ctex"
+uid="uid://bibdscpke0mi7"
+path="res://.godot/imported/Gemini-walk.png-56cbbad8242e3ff8b5f02a5b925374ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/rotations/east.png"
-dest_files=["res://.godot/imported/east.png-dd070531db59c7db2f9296ed3d88f552.ctex"]
+source_file="res://assets/generated/sprites/geminiSkin/Gemini-walk.png"
+dest_files=["res://.godot/imported/Gemini-walk.png-56cbbad8242e3ff8b5f02a5b925374ab.ctex"]
 
 [params]
 

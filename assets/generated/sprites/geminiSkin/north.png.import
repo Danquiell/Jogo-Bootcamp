@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlb52qlp81k0e"
-path="res://.godot/imported/WhatsApp Image 2026-05-09 at 16.16.03 (3).jpeg-43960b726959037fb354d508f4087522.ctex"
+uid="uid://dc32ic8heqdtl"
+path="res://.godot/imported/north.png-cedd75b0522df0605ab24c9c25775547.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/WhatsApp Image 2026-05-09 at 16.16.03 (3).jpeg"
-dest_files=["res://.godot/imported/WhatsApp Image 2026-05-09 at 16.16.03 (3).jpeg-43960b726959037fb354d508f4087522.ctex"]
+source_file="res://assets/generated/sprites/geminiSkin/north.png"
+dest_files=["res://.godot/imported/north.png-cedd75b0522df0605ab24c9c25775547.ctex"]
 
 [params]
 

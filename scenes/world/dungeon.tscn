@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://scripts/world/room.gd" id="1_room"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/world/room_transition.gd" id="4_transition"]
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="5_hud"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/skeleton.tscn" id="6_skeleton"]
+[ext_resource type="Texture2D" path="res://assets/generated/sprites/cenarios/cenario_quadrado_steampunk.png" id="7_floor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_top"]
 size = Vector2(320, 8)
@@ -26,12 +27,14 @@ room_size = Vector2(480, 360)
 player_spawn = Vector2(20, 180)
 music_track = "dungeon"
 
-[node name="Background" type="ColorRect" parent="."]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 480.0
-offset_bottom = 360.0
-color = Color(0.15, 0.12, 0.2, 1)
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 3840.0
+offset_bottom = 2880.0
+scale = Vector2(0.125, 0.125)
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("7_floor")
+stretch_mode = 1
 
 [node name="TopWall" type="StaticBody2D" parent="."]
 position = Vector2(240, -4)

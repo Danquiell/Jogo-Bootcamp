@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://basvcwymlgbok"
-path="res://.godot/imported/heroi1.png-081e5f89747eb62a177268269180f55e.ctex"
+uid="uid://x0jvp5ewhdxb"
+path="res://.godot/imported/south.png-8b5000b2174d9c9a79f3a4ea49ef2d7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/heroi1.png"
-dest_files=["res://.godot/imported/heroi1.png-081e5f89747eb62a177268269180f55e.ctex"]
+source_file="res://assets/generated/sprites/geminiSkin/south.png"
+dest_files=["res://.godot/imported/south.png-8b5000b2174d9c9a79f3a4ea49ef2d7a.ctex"]
 
 [params]
 

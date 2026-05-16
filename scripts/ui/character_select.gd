@@ -3,7 +3,7 @@ extends CanvasLayer
 const GAME_SCENE: String = "res://scenes/world/vila.tscn"
 
 const SWORD_TEX: String = "res://assets/rpg/sprites/player/Swordsman_lvl1/Without_shadow/Swordsman_lvl1_Idle_without_shadow.png"
-const GEMINI_TEX: String = "res://assets/generated/SPRITES-GEMINI/rotations/south.png"
+const GEMINI_TEX: String = "res://assets/generated/sprites/geminiSkin/Gemini-walk.png"
 
 const CARD_NAMES: Array[String] = ["Swordsman", "Gemini"]
 const CARD_SKINS: Array[int] = [GameManager.CharacterSkin.SWORDSMAN, GameManager.CharacterSkin.GEMINI]
@@ -91,10 +91,13 @@ func _make_card(char_name: String, tex_path: String, is_sword: bool) -> PanelCon
 		sprite_container.custom_minimum_size = Vector2(64, 64)
 		preview.position = Vector2(32, 32)
 	else:
-		# Single 36×36 frame, scale up 2×
-		preview.scale = Vector2(2.0, 2.0)
-		sprite_container.custom_minimum_size = Vector2(36, 36)
-		preview.position = Vector2(18, 18)
+		# Walk sheet, show frame 0 (south-facing), 4 cols × 4 rows, 128×128 per frame → scale 0.5
+		preview.hframes = 4
+		preview.vframes = 4
+		preview.frame = 0
+		preview.scale = Vector2(0.5, 0.5)
+		sprite_container.custom_minimum_size = Vector2(64, 64)
+		preview.position = Vector2(32, 32)
 
 	sprite_container.add_child(preview)
 	vbox.add_child(sprite_container)

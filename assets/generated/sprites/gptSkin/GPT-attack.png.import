@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqt85v68j3ltf"
-path="res://.godot/imported/WhatsApp Image 2026-05-09 at 16.16.03.jpeg-818dc59488b4f8f1cf6834597325b1f7.ctex"
+uid="uid://b3krralhtwfto"
+path="res://.godot/imported/GPT-attack.png-cfb832a80cb14dd41ec8ccd57305ae4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/generated/SPRITES-GEMINI/WhatsApp Image 2026-05-09 at 16.16.03.jpeg"
-dest_files=["res://.godot/imported/WhatsApp Image 2026-05-09 at 16.16.03.jpeg-818dc59488b4f8f1cf6834597325b1f7.ctex"]
+source_file="res://assets/generated/sprites/gptSkin/GPT-attack.png"
+dest_files=["res://.godot/imported/GPT-attack.png-cfb832a80cb14dd41ec8ccd57305ae4f.ctex"]
 
 [params]
 

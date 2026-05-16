@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://scripts/world/room.gd" id="1_room"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/slime.tscn" id="3_slime"]
 [ext_resource type="Script" path="res://scripts/world/room_transition.gd" id="4_transition"]
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="5_hud"]
+[ext_resource type="Texture2D" path="res://assets/generated/sprites/cenarios/obstaculo_steampunk.png" id="6_obstacle"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_top"]
 size = Vector2(320, 8)
@@ -14,6 +15,9 @@ size = Vector2(8, 180)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_right_wall"]
 size = Vector2(8, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obstacle"]
+size = Vector2(50, 70)
 
 [node name="Floresta" type="Node2D"]
 script = ExtResource("1_room")
@@ -95,6 +99,32 @@ damage = 2
 speed = 40.0
 aggro_range = 96.0
 drop_chance = 1.0
+
+[node name="Obstacle1" type="StaticBody2D" parent="."]
+position = Vector2(160, 55)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Obstacle1"]
+rotation_degrees = 90.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_obstacle")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Obstacle1"]
+shape = SubResource("RectangleShape2D_obstacle")
+
+[node name="Obstacle2" type="StaticBody2D" parent="."]
+position = Vector2(160, 130)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Obstacle2"]
+rotation_degrees = 90.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_obstacle")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Obstacle2"]
+shape = SubResource("RectangleShape2D_obstacle")
 
 [node name="Player" parent="." instance=ExtResource("2_player")]
 position = Vector2(20, 90)
