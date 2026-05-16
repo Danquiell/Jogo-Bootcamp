@@ -96,12 +96,20 @@ func get_spawn_position() -> Vector2:
 # --- Boss ---
 
 const VICTORY_SCENE_PATH: String = "res://scenes/ui/victory.tscn"
+const BOSS_DIALOG_SCENE_PATH: String = "res://scenes/ui/boss_dialog.tscn"
 
 func defeat_boss() -> void:
 	is_boss_defeated = true
 	boss_defeated.emit()
-	# Show victory screen after a brief delay
-	get_tree().create_timer(1.0).timeout.connect(_show_victory)
+	# Show boss monologue first; it will trigger the victory screen on finish.
+	get_tree().create_timer(1.0).timeout.connect(_show_boss_dialog)
+
+
+func _show_boss_dialog() -> void:
+	var scene: PackedScene = load(BOSS_DIALOG_SCENE_PATH)
+	if scene:
+		var inst: Node = scene.instantiate()
+		get_tree().current_scene.add_child(inst)
 
 
 func _show_victory() -> void:

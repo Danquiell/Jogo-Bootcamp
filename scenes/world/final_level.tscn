@@ -20,6 +20,7 @@ room_name = "Final Level"
 room_size = Vector2(480, 360)
 player_spawn = Vector2(30, 180)
 music_track = "dungeon"
+heal_on_enter = true
 
 [node name="BossArenaPhase1" type="TextureRect" parent="."]
 offset_right = 480.0

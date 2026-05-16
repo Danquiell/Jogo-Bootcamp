@@ -273,10 +273,6 @@ func _enter_death() -> void:
 	# Drop resources
 	_try_drop_resource()
 
-	# Boss defeat notification
-	if is_boss and GameManager:
-		GameManager.defeat_boss()
-
 	# Queue free after death animation
 	var death_duration: float = DEATH_CYCLE + 0.3
 	get_tree().create_timer(death_duration).timeout.connect(_on_death_timer)

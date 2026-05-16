@@ -21,11 +21,12 @@ const P2_AREA_PATH       := P2_BASE + "GPT Pro-iso_custom_heat_attack_right.png"
 
 # --- Sprite Layout ---
 # All sheets: 5 cols × 5 rows, 256×256 per frame (1280 / 256 = 5).
-# The analyze_sprites tool detected 128px frames but content bleeds across those
-# boundaries — confirmed correct frame size is 256×256.
-# We use only the first row (5 frames) and flip_h for left direction.
+# vframes MUST be the actual row count (5), not 1 — otherwise Godot calculates
+# frame_height = texture_height / vframes = 1280 / 1 = 1280, showing a full
+# vertical column of the sheet (5 stacked bosses) per frame.
+# We animate frame indices 0..4 to show only the first row.
 const P1_HFRAMES        := 5
-const P1_VFRAMES        := 1    # first row only
+const P1_VFRAMES        := 5
 const P1_FRAMES_PER_DIR := 5
 const P1_WALK_CYCLE     := 0.8
 
@@ -109,7 +110,7 @@ func _ready() -> void:
 	sprite.scale   = SPRITE_SCALE
 	sprite.texture = _p1_walk_tex
 	sprite.hframes = P1_HFRAMES
-	sprite.vframes = P1_VFRAMES   # 1 — first row only
+	sprite.vframes = P1_VFRAMES
 
 	# Area attack sprite — additive blend so black background is invisible
 	area_attack_sprite.scale   = AREA_SPRITE_SCALE
@@ -164,7 +165,8 @@ func _process_chase(_delta: float) -> void:
 		_enter_attack_area()
 		return
 
-	if melee_cooldown <= 0.0 and dist < MELEE_RANGE:
+	# Melee only exists in phase 1
+	if current_phase == Phase.ONE and melee_cooldown <= 0.0 and dist < MELEE_RANGE:
 		_enter_attack_melee()
 		return
 
@@ -200,6 +202,8 @@ func _process_attack_area(delta: float) -> void:
 		area_attack_sprite.visible = false
 		current_state = AIState.CHASE
 		anim_timer = 0.0
+		current_anim_frame = 0
+		_apply_walk_texture()
 
 
 func _process_hurt(delta: float) -> void:
@@ -222,7 +226,7 @@ func _enter_attack_melee() -> void:
 	hitbox.monitoring = true
 	sprite.texture = _p1_attack_tex
 	sprite.hframes = P1_HFRAMES
-	sprite.vframes = 1
+	sprite.vframes = P1_VFRAMES
 	sprite.flip_h  = facing == Direction.LEFT
 
 
@@ -306,22 +310,34 @@ func _flash_damage() -> void:
 # --- Animation ---
 
 func _apply_walk_texture() -> void:
-	sprite.hframes = P1_HFRAMES
-	sprite.vframes = 1
+	var new_tex: Texture2D
+	var new_flip: bool = false
+
 	if current_phase == Phase.ONE:
-		sprite.texture = _p1_walk_tex
-		sprite.flip_h  = facing == Direction.LEFT
+		new_tex  = _p1_walk_tex
+		new_flip = facing == Direction.LEFT
 	else:
 		match facing:
 			Direction.DOWN, Direction.UP:
-				sprite.texture = _p2_walk_down_tex
-				sprite.flip_h  = false
+				new_tex  = _p2_walk_down_tex
 			Direction.RIGHT:
-				sprite.texture = _p2_walk_right_tex
-				sprite.flip_h  = false
+				new_tex  = _p2_walk_right_tex
 			Direction.LEFT:
-				sprite.texture = _p2_walk_right_tex
-				sprite.flip_h  = true
+				new_tex  = _p2_walk_right_tex
+				new_flip = true
+
+	# Swapping to a different texture mid-animation makes the boss "jump" to a
+	# random pose from the new sheet. Restart the animation when that happens.
+	var texture_changed: bool = sprite.texture != new_tex
+	sprite.hframes = P1_HFRAMES
+	sprite.vframes = P1_VFRAMES
+	sprite.texture = new_tex
+	sprite.flip_h  = new_flip
+
+	if texture_changed:
+		anim_timer = 0.0
+		current_anim_frame = 0
+		_update_sprite_frame()
 
 
 func _update_facing(dir: Vector2) -> void:

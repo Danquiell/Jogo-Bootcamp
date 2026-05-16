@@ -6,10 +6,15 @@ extends Node2D
 @export var room_size: Vector2 = Vector2(320, 180)
 @export var player_spawn: Vector2 = Vector2(160, 90)
 @export var music_track: String = ""
+@export var heal_on_enter: bool = false
 
 
 func _ready() -> void:
 	GameManager.set_room_name(room_name)
+
+	if heal_on_enter:
+		GameManager.current_hp = GameManager.max_hp
+		GameManager.health_changed.emit(GameManager.current_hp, GameManager.max_hp)
 
 	# Play room music
 	if music_track != "":
