@@ -103,6 +103,10 @@ No text, no UI, no borders, no watermarks.
  
 ASSET TO GENERATE: [Create a female character in a steampunk theme who wears a red dress that reaches mid-thigh, short sleeves with black fabric on the shoulders, slightly dark green hair, boots with laces, black open-fingered gloves, and a large hat with mechanical goggles on the front, referencing the classic steampunk style.]
 
+## ITEM
+
+== STYLE BIBLE: [SEU JOGO] === Pixel art, 16-bit SNES JRPG era, reminiscent of "Steam of the machine". Limited palette of 24 [warm/cold/neon] colors: [liste as cores específicas]. 1-pixel dark outline. Soft dithered shadows. Centered subject on uniform white background. No text, no UI, no borders, no watermarks. === END STYLE ===   ASSET TO GENERATE:  gerenate a steampunk style damage granade, 8x8, Style: Green/dark gray oval with a pin/ring on top. I want the grenade to generate, in addition to its sprite, the visual effect of a colored circle upon explosion.
+
 ## SPRITE HEROI GEMINI
 == STYLE BIBLE: [SEU JOGO] ===
 Pixel art, 16-bit SNES JRPG era, reminiscent of "The Legend of
